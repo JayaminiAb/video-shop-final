@@ -1,0 +1,111 @@
+<div class="card">
+  <div class="card-body">
+    <h3>Search Movies</h3>
+
+    <!--   START-FILTER-SECTION -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col text-center">
+          <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseExample"
+                  aria-expanded="false" aria-controls="collapseExample" (click)="toggleFilters()">
+            {{showFilter ? "Hide" : "Show"}} Filters
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse show" id="collapseExample">
+      <div class=" marginTop">
+        <div class="form-row">
+
+          <div class="col-md">
+            <label for="nameFilter">Movie Name</label>
+            <input type="text" id="nameFilter" class="form-control" placeholder="Enter Name"
+                   [(ngModel)]="nameFilter"
+                   name="nameFilter">
+          </div>
+
+          <div class="col-md">
+            <label for="languageFilter">Movie Language</label>
+            <select class=" custom-select form-control" id="languageFilter"
+                    name="languageFilter"
+                    [(ngModel)]="languageFilter">
+              <option selected [disabled]="true">Choose...</option>
+              <option [ngValue]="language.language"
+                      *ngFor="let language of languagesList">{{language.language}}</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col text-right marginTop">
+            <button class="btn btn-primary" type="button" (click)="clearFilters()">Clear Filters</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--   END-FILTER-SECTION -->
+
+
+    <br>
+
+    <!--   START-MOVIE-LIST-SECTION -->
+
+    <div class="table-responsive-md">
+      <table class="table" style="text-align: center">
+
+        <tr>
+          <th>Movie Name</th>
+          <th>Movie Type</th>
+          <th>Status</th>
+          <th>Available On</th>
+          <th>Language</th>
+          <th>Select</th>
+        </tr>
+        <!--        Created tow pipes for filter function-->
+        <tr *ngFor="let movie of filteredMovieList | nameFilter: nameFilter | languageFilter: languageFilter;let i = index">
+
+          <td>{{movie.movieName}}</td>
+          <td>{{movie.movieType}}</td>
+          <td *ngIf="movie.isAvailable"><i class="fa fa-check" aria-hidden="true" style="color: #4CAF50"></i></td>
+          <td *ngIf="!movie.isAvailable"><i class="fa fa-times" aria-hidden="true" style="color: #c90000"></i></td>
+          <td>{{movie.availableDate}}</td>
+          <td>{{movie.movieLanguage}}</td>
+          <td *ngIf="movie.isAvailable">
+            <input type="checkbox" name="movieSelectBox" #checkboxes
+                   (change)="onChangeMovieSelect(movie,movie.movieID)">
+          </td>
+
+        </tr>
+
+      </table>
+    </div>
+
+    <!--   END-MOVIE-LIST-SECTION -->
+
+    <button class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg"
+            [disabled]="selectMovieList.length === 0">Rent Selected Movies
+    </button>
+  </div>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     data-backdrop="static" data-keyboard="false" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <app-movie-rent
+        [selectedMovieList]="selectMovieList"
+        (cancelClicked)="cancelClicked()"
+        (goBackClicked)="saveChanges()">
+      </app-movie-rent>
+
+    </div>
+  </div>
+</div>

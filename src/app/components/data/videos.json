@@ -1,0 +1,162 @@
+[
+  {
+    "movieID": 1,
+    "movieName": "Suwanda Denuna Jeewithe",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 2,
+    "movieName": "Wonder Woman 1984",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 3,
+    "movieName": "The Croods: A New Age",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 4,
+    "movieName": "The Outpost",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 5,
+    "movieName": "Dakina Dakina Mal",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 6,
+    "movieName": "Doctor Who",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 7,
+    "movieName": "Black Mirror",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 8,
+    "movieName": "Peaky Blinders",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 9,
+    "movieName": "The Ants ",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 10,
+    "movieName": "Downtown Abbey",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "English"
+  },
+  {
+    "movieID": 11,
+    "movieName": "Thevar Magan ",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 12,
+    "movieName": " Bambara Walalla ",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 13,
+    "movieName": "A Peck on the Cheek ",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 14,
+    "movieName": "Aaranya Kaandam ",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 15,
+    "movieName": "Kattradhu Thamizh",
+    "movieType": "Movie",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 16,
+    "movieName": "Sahodaraya",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 17,
+    "movieName": "Suprabatham",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 18,
+    "movieName": "Yoga Guru Baba Ramdev",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Sinhala"
+  },
+  {
+    "movieID": 19,
+    "movieName": "Sudu Andagena Kalu Avidin ",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  },
+  {
+    "movieID": 20,
+    "movieName": "Sa Re Ga Ma Pa Little Champs",
+    "movieType": "Drama",
+    "isAvailable": true,
+    "availableDate": "2021-06-16",
+    "movieLanguage": "Tamil"
+  }
+]

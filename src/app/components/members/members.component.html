@@ -1,0 +1,93 @@
+<div class="card addMembers">
+  <div class="card-body">
+    <h3>Add Members</h3>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+
+      <div class="col-md-4">
+        <div class="card rentDetails">
+          <small *ngFor="let memberTy of usingMemberTypes">
+            <h5>{{memberTy.memberType}}</h5>
+            <p>Member cost : {{memberTy.memberCost | currency}} per annul
+              <br>Daily rent : {{memberTy.dailyRent | currency}}
+              <br>Weekly rent : {{memberTy.weeklyRent | currency}}
+            </p>
+          </small>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="memberName">Member Name <small *ngIf="memberName.trim().length === 0" class="validator">*
+              required</small></label>
+            <input
+              [(ngModel)]="memberName"
+              name="memberName"
+              (ngModelChange)="onChangeName()"
+              type="text" class="form-control" id="memberName" placeholder="Enter name">
+            <small *ngIf="!memberNameValid" class="validator">Name should have more than two characters</small>
+          </div>
+
+          <div class="form-group">
+            <label for="memberMobileNum">Mobile Number
+              <small *ngIf="memberMobileNum.trim().length === 0" class="validator">* required</small>
+            </label>
+            <input
+              [(ngModel)]="memberMobileNum"
+              name="memberMobileNum"
+              (ngModelChange)="onChangeMobileNumber()"
+              required
+              type="text" class="form-control" id="memberMobileNum" placeholder="Enter mobile number">
+          </div>
+
+          <small *ngIf="!mobNumberPattern" class="validator">Invalid mobile number</small>
+          <small *ngIf="mobileNumberExist && mobNumberPattern" class="validator">Member Already Exist</small>
+
+          <div class="form-check">
+            <input
+              [(ngModel)]="memberType"
+              name="memberType"
+              type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Premium Member</label>
+
+          </div>
+
+          <button class="btn btn-primary float-right"
+                  (click)="addNewMember()"
+                  [disabled]="memberMobileNum.trim().length === 0 || memberName.trim().length === 0">Add
+          </button>
+
+        </form>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <hr>
+
+    <div *ngIf="updatedMemberList.length > 0">
+
+      <h3>Member List</h3>
+      <div class="table-responsive-md">
+        <table class="table" style="text-align: center">
+          <tr>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Member Type</th>
+          </tr>
+          <tr *ngFor="let member of updatedMemberList">
+            <td>{{member.memberName}}</td>
+            <td>{{member.memberMobileNo}}</td>
+            <td>{{member.memberType}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+

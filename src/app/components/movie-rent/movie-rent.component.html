@@ -1,0 +1,177 @@
+<div class="card">
+  <div class="card-header"><h3>Rent Movies</h3></div>
+
+  <div class="card-body">
+    <form class="formRow">
+      <div class="row">
+
+        <div class="col">
+          <input type="text" id="mobileNumber" class="form-control" placeholder="Enter mobile"
+                 name="enteredMobileNumber"
+                 [disabled]="inputDisabled"
+                 (ngModelChange)="onChangeMobileNumber()"
+                 [(ngModel)]="enteredMobileNumber">
+        </div>
+
+        <div class="col">
+          <button class="btn btn-primary" type="button" (click)="searchMember()" [disabled]="inputDisabled">Search
+          </button>
+        </div>
+
+      </div>
+
+      <br>
+
+      <small *ngIf="!isNumberValid" class="validator">In valid mobile number</small>
+      <small *ngIf="!isNumberExist" class="validator">Member does't exist</small>
+
+      <div class="row " *ngFor="let member of memberOfMobileNumber">
+        <p>Member Name: {{member.memberName}}</p>
+        <p>Member Type: {{member.memberType}}</p>
+      </div>
+
+
+    </form>
+
+
+    <h5>Selected Movies </h5>
+    &nbsp;&nbsp;<button class="btn btn-primary float-right" [hidden]="hideAddMore" style="margin-bottom: 2.5%!important;">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    &nbsp;add more</button>
+
+    <div class="table-responsive" [hidden]="!hideUpdatedTable">
+      <table class="table">
+
+        <tr>
+          <th>Movie Name</th>
+          <th>Movie Type</th>
+          <th>Renting</th>
+          <th>Return</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr *ngFor="let selectedMovie of selectedMovieList; let i = index">
+
+          <td>{{selectedMovie.movieName}}</td>
+          <td>{{selectedMovie.movieType}}</td>
+          <td>
+
+            <div class="form-group">
+              <select class="form-control" id="selectRentType"
+                      name="rentingType"
+                      [ngModel]="rentType"
+                      (ngModelChange)="onChangeRentType(selectedMovie.movieID,$event)">
+                <option [disabled]="true" selected>Daily / Weekly</option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+              </select>
+            </div>
+
+          </td>
+          <td>
+
+            <div class="form-group">
+              <input type="date" class="form-control"
+                     name="returnDate"
+                     id="dateInput"
+                     [ngModel]="returnDate"
+                     (ngModelChange)="onChangeDateValues(selectedMovie.movieID,$event)"
+                     [min]="todayForInput">
+            </div>
+
+          </td>
+          <td>00.00$</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-responsive" [hidden]="hideUpdatedTable">
+      <table class="table">
+
+        <tr>
+          <th>Movie Name</th>
+          <th>Movie Type</th>
+          <th>Renting</th>
+          <th>Return</th>
+          <th>Amount</th>
+        </tr>
+        <tr *ngFor="let movie of updatedSelectedMovieObject">
+
+          <td>{{movie.movieName}}</td>
+          <td>{{movie.movieType}}</td>
+          <td>
+            <select class="form-control"
+                      name="rentingType"
+                      [ngModel]="movie.rentType"
+                      (ngModelChange)="onChangeRentType(movie.movieID,$event)"
+                      [disabled]="inputDisabled">
+            <option [disabled]="true" selected>Daily / Weekly</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            </select>
+
+          </td>
+          <td>
+
+            <input type="date" class="form-control"
+                     name="returnDate"
+                     [ngModel]="movie.returnDate"
+                     (ngModelChange)="onChangeDateValues(movie.movieID,$event)"
+                     [disabled]="inputDisabled">
+
+          </td>
+          <td>{{movie.amount | currency}}</td>
+
+        </tr>
+
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Total Amount</th>
+          <th>{{totalAmount | currency}}</th>
+        </tr>
+
+      </table>
+    </div>
+
+    <p [hidden]="hideWarning" style="color: orange">Add a member and choose a renting type and a return date for all
+      movies, to proceed.</p>
+
+    <p class="validator" [hidden]="hideAddToCart"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Check
+      before adding items to the cart, after adding you can't edit.</p>
+  </div>
+
+  <div class="card-footer">
+    <div class="btn-toolbar float-end" role="toolbar" aria-label="Toolbar with button groups">
+
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <button class="btn btn-primary float-right" [hidden]="hideSave" (click)="onSaveChanges()" data-dismiss="modal">
+          Perches
+        </button>
+      </div>
+
+      <div class="btn-group mr-2" role="group" aria-label="Second group" [hidden]="hideAddToCart">
+        <button class="btn btn-danger float-right" (click)="addToCart()">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;
+          Add to cart
+        </button>
+      </div>
+
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal" id="modalClose"
+                (click)="clickCancel()">
+          Cancel
+        </button>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+
+

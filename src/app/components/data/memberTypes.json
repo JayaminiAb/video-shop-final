@@ -1,0 +1,4 @@
+[
+  { "memberTypeID": 1, "memberType": "Premium", "memberCost": 50.00, "dailyRent": 5.00, "weeklyRent": 25.00 },
+  { "memberTypeID": 2, "memberType": "Basic", "memberCost": 75.00, "dailyRent": 3.00, "weeklyRent": 15.00 }
+]

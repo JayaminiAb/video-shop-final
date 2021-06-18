@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body{
+  padding: 10px;
+  background: #232931;
+
+}
+.card{
+  background: #4c4f56;
+}
+.mainCard, .modal-content{
+  background-color: #393E46
+}
+
+h1, h2, h3, h4, h5, h6, p,label,table{
+  color: #d9dce3 !important;
+}
+
+select{
+  background: #393E46!important;
+  border: 1px solid #8b9197!important;
+  color: #d9dce3 !important;
+}
+
+.form-control{
+  background: #393E46!important;
+  color: #d9dce3 !important;
+  border: 1px solid #8b9197!important;
+}
+

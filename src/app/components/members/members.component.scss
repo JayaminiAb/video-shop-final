@@ -1,0 +1,32 @@
+
+.borderless td, .borderless th {
+  border: none;
+}
+.validator{
+  color: #dc3545;
+}
+
+.rentDetails{
+  text-align: center;
+  padding: 2%;
+}
+
+.card{
+  margin-bottom: 5%;
+}
+.rentDetails{
+  border: 2px solid #8b9197;
+}
+
+@media only screen and (min-width: 768px) {
+  form{
+    padding: 0 10% 0 10%;
+  }
+  .table-responsive-md{
+    padding: 0 10% 0 10% !important;
+  }
+  .rentDetails{
+    margin-left: 10%;
+  }
+}
+

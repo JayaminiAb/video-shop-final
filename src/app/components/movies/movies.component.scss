@@ -1,0 +1,25 @@
+.marginTop{
+  margin-top: 5%;
+}
+
+.modal-content{
+  padding: 1%;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-row {
+    padding: 0 10% 0 10% !important;
+  }
+  .marginTop{
+    margin-top: 1%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .form-row {
+    padding: 0 20% 0 20% !important;
+  }
+  .marginTop{
+    margin-top: 1%;
+  }
+}
